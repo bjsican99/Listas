@@ -6,12 +6,13 @@ import java.util.Scanner;
  *
  * @author Billy Jeshua Sican Matias 0901-17-16250
  */
-public class ListasEnlazadas
-{
+public class ListasEnlazadas{
     	Nodo Primero;
+        Nodo Final;
         Nodo Siguiente;
 	public ListasEnlazadas(){ 
 		Primero=null;
+                Final = null;
 	}
 	public boolean vacia(){
 		if (Primero==null){
@@ -22,32 +23,33 @@ public class ListasEnlazadas
 	}
         
 	public void InsertarEnPrimero(int Dato){
-		Nodo Temporal=new Nodo(Dato); //Crea el nodo temporal
+		Nodo Temporal=new Nodo(Dato, Primero); //Crea el nodo temporal
 		Temporal.Siguiente=Primero; //corre al primero
 		Primero=Temporal;   //lo coloca de primero
 	}
         
         public void InsertarLocalizacion(){
-            Nodo anterior=Primero;
             Scanner scngua = new Scanner(System.in);
+            Nodo anterior=Primero;
             Nodo actual=Primero;
             int k=0, pos, Dato;
             System.out.println("En que posicion Decea Incertar ");
-            Dato = scngua.nextInt();
-            System.out.println("Que Dato Va a Insertar: ");
             pos = scngua.nextInt();
-            Nodo Temporal=new Nodo(Dato);
+            System.out.println("Que Dato Va a Insertar: ");
+            Dato = scngua.nextInt();
             if (pos>=0){
-		while (k!=pos && actual.Siguiente != null){
+                while (k!=pos && actual.Siguiente != null){
                     anterior=actual;
                     actual=actual.Siguiente;
-                    Temporal.Siguiente = actual;
-                    actual = Temporal;
-                    k++;
-                    System.out.println("K       "+k);
-		}
-            System.out.println("Dato: "+actual.info);
+                    k++;                   
+                }			
             }
+            
+            Primero.Siguiente = new Nodo(Dato, actual);
+            if(Final == null){
+                Final = Primero;
+            }
+                      
         }
         public void Localizar(){
             Nodo anterior=Primero;

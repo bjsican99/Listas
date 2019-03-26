@@ -20,10 +20,10 @@ public class Inicio {
         
 	System.out.println(miLista.Listar());
         miLista.InsertarLocalizacion();
-	System.out.println("borrar");
+	//System.out.println("borrar");
 	//miLista.borrarUltimo();
         //miLista.borrarPrimero();
-        miLista.borrarPosicion(2);
+        //miLista.borrarPosicion(2);
 	
 	System.out.println(miLista.Listar());
     }
