@@ -2,7 +2,7 @@ package ListasEnlazadas;
 
 /**
  *
- * @author EDUARDO
+ * @author Billy Jeshua Sican Matias 0901-17-16250
  */
 public class ListasEnlazadas
 {
@@ -22,9 +22,11 @@ public class ListasEnlazadas
 		Temporal.Siguiente=Primero; //corre al primero
 		Primero=Temporal;   //lo coloca de primero
 	}
+        
 	public void borrarPrimero(){
 		Primero=Primero.Siguiente;
 	}
+        
 	public String Listar(){
 		String Dato=" ";
 		Nodo aux=Primero;
@@ -34,6 +36,7 @@ public class ListasEnlazadas
 		}
 		return(Dato);
 	}
+        
 	public void borrarUltimo(){
 		Nodo anterior=Primero;
 		Nodo actual=Primero;
@@ -43,6 +46,7 @@ public class ListasEnlazadas
 		}
 		anterior.Siguiente=null;
 	}
+        
 	public void borrarPosicion(int pos){
 		Nodo anterior=Primero;
 		Nodo actual=Primero;

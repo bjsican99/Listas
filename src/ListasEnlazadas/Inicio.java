@@ -2,7 +2,7 @@ package ListasEnlazadas;
 
 /**
  *
- * @author EDUARDO
+ * @author Billy Jeshua Sican Matias 0901-17-16250
  */
 public class Inicio {
 
