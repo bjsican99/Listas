@@ -1,5 +1,7 @@
 package ListasEnlazadas;
 
+import java.util.Scanner;
+
 /**
  *
  * @author Billy Jeshua Sican Matias 0901-17-16250
@@ -7,7 +9,8 @@ package ListasEnlazadas;
 public class ListasEnlazadas
 {
     	Nodo Primero;
-	public ListasEnlazadas(){
+        Nodo Siguiente;
+	public ListasEnlazadas(){ 
 		Primero=null;
 	}
 	public boolean vacia(){
@@ -17,11 +20,53 @@ public class ListasEnlazadas
                     return(false);
 		}
 	}
+        
 	public void InsertarEnPrimero(int Dato){
 		Nodo Temporal=new Nodo(Dato); //Crea el nodo temporal
 		Temporal.Siguiente=Primero; //corre al primero
 		Primero=Temporal;   //lo coloca de primero
 	}
+        
+        public void InsertarLocalizacion(){
+            Nodo anterior=Primero;
+            Scanner scngua = new Scanner(System.in);
+            Nodo actual=Primero;
+            int k=0, pos, Dato;
+            System.out.println("En que posicion Decea Incertar ");
+            Dato = scngua.nextInt();
+            System.out.println("Que Dato Va a Insertar: ");
+            pos = scngua.nextInt();
+            Nodo Temporal=new Nodo(Dato);
+            if (pos>=0){
+		while (k!=pos && actual.Siguiente != null){
+                    anterior=actual;
+                    actual=actual.Siguiente;
+                    Temporal.Siguiente = actual;
+                    actual = Temporal;
+                    k++;
+                    System.out.println("K       "+k);
+		}
+            System.out.println("Dato: "+actual.info);
+            }
+        }
+        public void Localizar(){
+            Nodo anterior=Primero;
+            Scanner scngua = new Scanner(System.in);
+		Nodo actual=Primero;
+		int k=0, pos;
+                System.out.println("Que Dato Decea Localizar\nEscriba la posicion: ");
+		pos = scngua.nextInt();
+                if (pos>=0){
+			while (k!=pos && actual.Siguiente != null){
+                            anterior=actual;
+                            actual=actual.Siguiente;
+                            k++;
+                            System.out.println("K       "+k);
+			}
+			System.out.println("Dato: "+actual.info);
+		}
+            
+        }
         
 	public void borrarPrimero(){
 		Primero=Primero.Siguiente;
@@ -58,7 +103,7 @@ public class ListasEnlazadas
                             k++;
                             System.out.println("K       "+k);
 			}
-			anterior.Siguiente=actual.Siguiente;
+			anterior.Siguiente = actual.Siguiente;
 		}
 	}
 

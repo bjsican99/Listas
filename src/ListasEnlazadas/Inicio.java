@@ -17,10 +17,13 @@ public class Inicio {
 	miLista.InsertarEnPrimero(50);
 	miLista.InsertarEnPrimero(40);
 	miLista.InsertarEnPrimero(60);
+        
 	System.out.println(miLista.Listar());
+        miLista.InsertarLocalizacion();
 	System.out.println("borrar");
-	miLista.borrarUltimo();
-        miLista.borrarPrimero();
+	//miLista.borrarUltimo();
+        //miLista.borrarPrimero();
+        miLista.borrarPosicion(2);
 	
 	System.out.println(miLista.Listar());
     }
